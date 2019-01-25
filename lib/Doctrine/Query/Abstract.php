@@ -1118,6 +1118,7 @@ abstract class Doctrine_Query_Abstract
                 $params = array('component' => $component, 'alias' => $alias);
                 $event = new Doctrine_Event($record, $callback['const'], $this, $params);
 
+                // @see https://github.com/doctrine/doctrine1/issues/69
                 $record->{$callback['callback']}($event);
                 $table->getRecordListener()->{$callback['callback']}($event);
             }

@@ -35,7 +35,7 @@ class Doctrine_Cache_Apc_TestCase extends Doctrine_Cache_Abstract_TestCase
 {
     protected function _clearCache()
     {
-        apc_clear_cache('user');
+        apcu_clear_cache('user');
     }
     
     protected function _isEnabled()

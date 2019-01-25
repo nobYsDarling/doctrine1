@@ -460,6 +460,7 @@ class Doctrine_Collection extends Doctrine_Access implements Countable, Iterator
             $relations = $this->relation['table']->getRelations();
             foreach ($relations as $relation) {
                 if ($this->relation['class'] == $relation['localTable']->getOption('name') && $relation->getLocal() == $this->relation->getForeignFieldName()) {
+                    // @see https://github.com/doctrine/doctrine1/issues/69
                     $record->{$relation['alias']} = $this->reference;
                     break;
                 }
